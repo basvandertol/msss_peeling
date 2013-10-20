@@ -1,6 +1,5 @@
 from read_solutions import *
 from fit_tec_per_source_pair import *
-from calculate_piercepoints import *
 import pyrap.measures
 import utils
 
