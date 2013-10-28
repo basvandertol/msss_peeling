@@ -9,7 +9,7 @@ bad_stations = ['RS409LBA', 'RS310LBA', 'RS106LBA', 'RS306LBA']
 bad_stations = ['RS409LBA', 'RS310LBA']
 
 beta = 5.0/3
-datadir = "/home/vdtol/msss_peeling/L103929"
+datadir = "/data/scratch/vdtol/MSSS_LBA/data/L103929"
 height = 200e3
 order = 15
 

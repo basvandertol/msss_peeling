@@ -22,7 +22,7 @@ def read_solutions(datadir = 'L103929'):
 
     s = set() 
     for i, msname in enumerate(mslist[:]):
-        instrumentname = msname + '/instrument1'
+        instrumentname = msname + '/instrument'
         #print instrumentname
         pdb = lofar.parmdb.parmdb( instrumentname )
         s = s.union(utils.get_source_list( pdb, ["*"] ))
@@ -32,7 +32,7 @@ def read_solutions(datadir = 'L103929'):
 
     m = zeros((N_sources, N_freqs))
     for i, msname in enumerate(mslist[:]):
-        instrumentname = msname + '/instrument1'
+        instrumentname = msname + '/instrument'
         #print instrumentname
         pdb = lofar.parmdb.parmdb( instrumentname )
         source_list1 = utils.get_source_list( pdb, ["*"] )
@@ -43,7 +43,7 @@ def read_solutions(datadir = 'L103929'):
     skydb = lofar.parmdb.parmdb(mslist[0] + '/sky')
 
 
-    instrumentname = mslist[0] + '/instrument1'
+    instrumentname = mslist[0] + '/instrument'
     pdb = lofar.parmdb.parmdb( instrumentname )
     parmname = 'DirectionalGain:0:0:Real:CS001LBA' + ':' + source_names[2]
     times = pdb.getValuesGrid(parmname)[parmname]['times']
@@ -72,7 +72,7 @@ def read_solutions(datadir = 'L103929'):
         
         for k, msname in enumerate(mslist[:]):
             if m[i, k]:
-                instrumentname = msname + '/instrument1'
+                instrumentname = msname + '/instrument'
                 pdb = lofar.parmdb.parmdb( instrumentname )
                 parmname = 'DirectionalGain:0:0:Real:CS001LBA' + ':' + source1
                 freqs[k] = pdb.getValuesGrid(parmname)[parmname]['freqs'][0]
