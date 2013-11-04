@@ -1,0 +1,33 @@
+Strategy.Stations = []
+Strategy.InputColumn = DATA
+Strategy.ChunkSize = 1500
+Strategy.UseSolver = F
+Strategy.Steps = [correct1, correct2]
+
+## Correct for the beam ###
+Step.correct.Operation = CORRECT
+Step.correct.Model.Sources = []
+Step.correct.Model.Beam.Enable = T
+Step.correct.Model.Beam.Mode = ARRAY_FACTOR
+Step.correct.Output.Column = CORRECTED_DATA
+Step.correct.Output.WriteFlags = F
+
+## Correct for beam and gain ##
+Step.correct1.Operation = CORRECT
+Step.correct1.Model.Sources = []
+Step.correct1.Model.Beam.Enable = T
+Step.correct1.Model.Beam.Mode = ARRAY_FACTOR
+Step.correct1.Model.Gain.Enable = T
+Step.correct1.Model.Phasors.Enable = T
+Step.correct1.Output.WriteFlags = F
+
+## Correct for ionosphere ##
+Step.correct2.Operation = CORRECT
+Step.correct2.Model.Sources = [source]
+Step.correct2.Model.Ionosphere.Enable = T
+Step.correct2.Model.Ionosphere.Type = EXPION
+Step.correct2.Output.Column = CORRECTED_DATA
+Step.correct2.Output.WriteFlags = F
+
+
+# 1453.6+6927 1459.1+7140 1510.3+7045 1520.7+7225 1609.6+6556
